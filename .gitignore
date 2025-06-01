@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyCharm specific files
+.idea/
+*.iml
+
+# Conda environment folders
+env/
+venv/
+.conda/
+.conda_env/
+# If you have your conda env inside the project folder, ignore it
+envs/
+venvs/
+
+# macOS specific files
+.DS_Store
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# VSCode settings (in case you use VSCode too)
+.vscode/
+
+# pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# mypy cache
+.mypy_cache/
+
+# pipenv
+Pipfile.lock
+
+# pyenv
+.python-version
