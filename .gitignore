@@ -51,3 +51,6 @@ Pipfile.lock
 
 # pyenv
 .python-version
+
+*.csv
+.swp
