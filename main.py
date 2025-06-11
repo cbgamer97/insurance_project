@@ -32,5 +32,11 @@ axes[1].set_title('BMI by Smoking Status')
 axes[1].set_xlabel('Smoker')
 axes[1].set_ylabel('BMI')
 
+# Barplot for number of smokers by sex
+sns.barplot(ax=axes[2], x=smoking_counts.index, y=smoking_counts.values)
+axes[2].set_title('Number of Smokers by Sex')
+axes[2].set_xlabel('Sex')
+axes[2].set_ylabel('Count of Smokers')
+
 plt.tight_layout()
 plt.show()
