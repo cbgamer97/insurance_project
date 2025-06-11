@@ -8,15 +8,29 @@ import seaborn as sns
 # Step 1: Load the dataset
 df = pd.read_csv('insurance.csv')
 
-# Step 2: Compare average insurance charges between smokers and non-smokers
+# Calculate averages and counts
 avg_charges = df.groupby('smoker')['charges'].mean()
-print("Average charges:\n", avg_charges)
+avg_bmi = df.groupby('smoker')['bmi'].mean()
+smoking_counts = df[df['smoker'] == 'yes'].groupby('sex').size()
 
-print("\nCounts by smoker status:\n", df['smoker'].value_counts())
+print("Average charges by smoking status:\n", avg_charges)
+print("\nAverage BMI by smoking status:\n", avg_bmi)
+print("\nNumber of smokers by sex:\n", smoking_counts)
 
-# Step 3: Visualize with a boxplot
-sns.boxplot(x='smoker', y='charges', data=df)
-plt.title('Insurance Charges by Smoking Status')
-plt.xlabel('Smoker')
-plt.ylabel('Charges')
+# Create subplots for boxplots and barplot
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# Boxplot for charges by smoker
+sns.boxplot(ax=axes[0], x='smoker', y='charges', data=df)
+axes[0].set_title('Insurance Charges by Smoking Status')
+axes[0].set_xlabel('Smoker')
+axes[0].set_ylabel('Charges')
+
+# Boxplot for BMI by smoker
+sns.boxplot(ax=axes[1], x='smoker', y='bmi', data=df)
+axes[1].set_title('BMI by Smoking Status')
+axes[1].set_xlabel('Smoker')
+axes[1].set_ylabel('BMI')
+
+plt.tight_layout()
 plt.show()
